@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "ecu-sf-read-sobjects": {
+          "type": "http",
+          "url": "https://api.salesforce.com/platform/mcp/v1/platform/sobject-reads",
+          "oauth": {
+            "clientId": "3MVG9QJ.PEcCek9YOYYHtjhIH3.ybIbE3HOByLhFZhph.lMRpZc4rAPy7omEogMphJN2dWB2Dfza1CaTUvfh4",
+            "callbackPort": 38000
+          }
+    },
+    "Salesforce DX": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@salesforce/mcp",
+            "--orgs",
+            "DEFAULT_TARGET_ORG",
+            "--toolsets",
+            "orgs,metadata,data,users",
+            "--tools",
+            "run_apex_test,retrieve_metadata",
+            "--allow-non-ga-tools"
+          ]
+    }
+  }
+}
