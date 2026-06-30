@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Full Edit access to Lesson, Question, and Answer Choice objects and all their custom fields.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Lesson Materials Access</label>
+    <license>Salesforce</license>
+
+    <!-- Object permissions -->
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Lesson__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Question__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Answer_Choice__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+
+    <!-- Lesson__c field permissions -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lesson__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lesson__c.Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lesson__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lesson__c.Difficulty_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lesson__c.Thumbnail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Question__c field permissions (Lesson__c omitted — MasterDetail fields are always required and cannot have FLS set) -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Question__c.Explanation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Question__c.Order_Sequence__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Question__c.Question_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <!-- Answer_Choice__c field permissions (Question__c omitted — MasterDetail fields are always required and cannot have FLS set) -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Answer_Choice__c.Choice_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Answer_Choice__c.Is_Correct__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Answer_Choice__c.Order_Sequence__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+</PermissionSet>

@@ -1,4 +1,5 @@
 import { existsSync } from 'node:fs';
+import os from 'node:os';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -13,6 +14,19 @@ const schemaExists = existsSync(schemaPath);
 export default defineConfig(({ mode }) => {
   return {
     base: './',
+    // Store Vite's dep-optimisation cache outside OneDrive to avoid EPERM
+    // rename errors caused by OneDrive holding file locks during sync.
+    cacheDir: path.join(os.tmpdir(), 'vite-cache', 'ecu-myapp'),
+    server: {
+      fs: {
+        // Allow serving the external cache directory via @fs/ URLs.
+        // Without this Vite blocks the requests and returns 504.
+        allow: [
+          resolve(__dirname),
+          path.join(os.tmpdir(), 'vite-cache', 'ecu-myapp'),
+        ],
+      },
+    },
     plugins: [
       tailwindcss(),
       react(),

@@ -666,6 +666,6 @@ Review the data model document first.
 
 After creating or modifying objects or fields:
 
-- Update docs/data-model.md
+- Always update docs/data-model.md
 - Keep object definitions current
 - Keep relationship diagrams current
